@@ -10,7 +10,8 @@ Compatibilidad
 
 Dependencias
 ------------
-* [DLL](http://restsharp.org/)
+* [SW-SDK-CPP](https://github.com/lunasoft/sw-sdk-cpp)
+* [CPPREST SDK](https://github.com/Microsoft/cpprestsdk)
 
 ----------------
 Instalaci&oacute;n
