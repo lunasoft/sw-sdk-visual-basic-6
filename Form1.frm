@@ -7,8 +7,8 @@ Begin VB.Form Form1
    ClientTop       =   450
    ClientWidth     =   14970
    LinkTopic       =   "Form1"
-   ScaleHeight     =   13275
-   ScaleWidth      =   14970
+   ScaleHeight     =   15630
+   ScaleWidth      =   28560
    StartUpPosition =   3  'Windows Default
    Begin MSComctlLib.ProgressBar ProgressBar1 
       Height          =   855
@@ -200,8 +200,8 @@ Begin VB.Form Form1
          Width           =   735
       End
       Begin VB.Label Label7 
-         Caption         =   "Documento a timbrar"
-         Height          =   495
+         Caption         =   "Documento a timbrar (Formato B64)"
+         Height          =   855
          Left            =   120
          TabIndex        =   19
          Top             =   3600
@@ -401,10 +401,10 @@ Private Sub Form_Initialize()
     ChDir App.path
     Form1.txtUsuario.Text = "demo"
     Form1.txtPass.Text = "123456789"
-    Form1.txtUrl.Text = "http://swservicestest-rc.azurewebsites.net"
+    Form1.txtUrl.Text = "http://services.test.sw.com.mx"
     Form1.txtPasswordToken.Text = "123456789"
     Form1.txtUserToken.Text = "demo"
-    Form1.txtUrlToken.Text = "http://swservicestest-rc.azurewebsites.net"
+    Form1.txtUrlToken.Text = "http://services.test.sw.com.mx"
 End Sub
 
 Private Sub Label18_Click()
