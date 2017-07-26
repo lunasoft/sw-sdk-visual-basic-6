@@ -16,7 +16,7 @@ Attribute VB_Exposed = True
     Dim body As String
     Dim bound As String
     Dim sp As String
-    Public Function stampV1(url As String, xml As String, version As String, Token As String) As String
+    Public Function Stamp(url As String, xml As String, version As String, Token As String) As String
         Set http = New MSXML2.ServerXMLHTTP
         sp = "\r\n"
         bound = "AaB03x"
@@ -37,7 +37,7 @@ Attribute VB_Exposed = True
 
         http.send (body)
 
-        stampV1 = http.responseText
+        StampV1 = http.responseText
 
        
     End Function
