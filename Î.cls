@@ -42,20 +42,10 @@ Attribute VB_Exposed = True
        
     End Function
     
-    Private Function log(data As String)
-    Dim iFileNo As Integer
-iFileNo = FreeFile
-'open the file for writing
-Open "C:\Users\asalvio\Documents\WORKSPACE\VISUAL BASIC 6\native\sw.services\log.txt" For Output As #iFileNo
-'please note, if this file already exists it will be overwritten!
-
-'write some example text to the file
-Print #iFileNo, data
-
-
-'close the file (if you dont do this, you wont be able to open it again!)
-Close #iFileNo
-    End Function
+   
 
     
 
+Private Sub Class_Initialize()
+
+End Sub

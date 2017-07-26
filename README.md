@@ -29,7 +29,7 @@ Se declaran funciones de la clase Authentication.
 
 ```vb
  Dim auth As New Authentication
- MsgBox auth.token("http://services.test.sw.com.mx", "demo", "123456789")
+ MsgBox auth.Token("http://services.test.sw.com.mx", "demo", "123456789")
 ```
 La respuesta es en formato string.
 
@@ -60,9 +60,9 @@ Recibe el contenido de un **XML** ya emitido (sellado) en formato **String**,   
 
 Para poder hacer uso de las funciones de Timbrado de la DLL, debes declarar la referencia de la función en el código VB6.
 ```vb
- Dim stamp As New stamp
+ Dim stamp As New Stamp
  'host, xml a timbrar, version de timbrado, token de autenticacion
- MsgBox stamp.stampV1("http://services.test.sw.com.mx", xml, "v1", token)
+ MsgBox stamp.Stamp("http://services.test.sw.com.mx", xml, "v1", token)
 
 ```
 
