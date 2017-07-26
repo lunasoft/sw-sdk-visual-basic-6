@@ -22,7 +22,7 @@ Dim http As New MSXML2.ServerXMLHTTP
 
 
 
-        http.open "POST", url, False
+        http.open "POST", url & "/security/authenticate", False
         http.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
 
         http.setRequestHeader "user", user

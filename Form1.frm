@@ -45,7 +45,7 @@ Attribute VB_Exposed = False
 
 Private Sub auth_Click()
 Dim auth As New Authentication
-MsgBox auth.token("http://services.test.sw.com.mx/security/authenticate", "demo", "123456789")
+MsgBox auth.token("http://services.test.sw.com.mx", "demo", "123456789")
 
 End Sub
 
