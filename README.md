@@ -46,7 +46,7 @@ O en caso de error
 
 ```json
 {
-    "message": "SuFacturacion AU1000. Error No Controlado. No se pudo generar el token de autenticaci�n.",
+    "message": "SuFacturacion AU1000. Error No Controlado. No se pudo generar el token de autenticación.",
     "messageDetail": "",
     "status": "error"
 }
@@ -80,7 +80,7 @@ O en caso de error:
 
 ```json
 {
-  "message": "CFDI33102 - El resultado de la digesti�n debe ser igual al resultado de la desencripci�n del sello.",
+  "message": "CFDI33102 - El resultado de la digestión debe ser igual al resultado de la desencripción del sello.",
   "messageDetail": "CadenaOriginal: ||3.3|RogueOne|HNFK231|2017-05-11T16:48:22|01|20001000000300022763|201.00|MXN|1|603.28|I|PUE|06300|TME960709LR2|INMOB EDMA SA DE CV|601|AAA010101AAA|Rodolfo Carranza Ramos|G03|50211503|UT421511|1|H87|Pieza|Cigarros|200.00|200.00|200.00|002|Tasa|0.160000|32.08|232.00|003|Tasa|1.600000|371.20|002|Tasa|0.160000|32.08|003|Tasa|1.600000|371.20|403.28||",
   "status": "error"
 }
