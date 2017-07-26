@@ -10,7 +10,9 @@ Compatibilidad
 
 Dependencias
 ------------
+
 * MSXML
+
 
 
 ----------------
@@ -68,6 +70,7 @@ Para poder hacer uso de las funciones de Timbrado de la DLL, debes declarar la r
 
 La respuesta es un string :
 
+
 ```json
 {
   "data": {
@@ -85,3 +88,4 @@ O en caso de error:
   "status": "error"
 }
 ```
+
