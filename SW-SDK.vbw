@@ -1,0 +1,9 @@
+UNIT_TEST = 82, 190, 1516, 721, C, 2, 1, 1318, 772, C
+AccountBalance = -62, 194, 1227, 818, C
+Authentication = 0, 0, 0, 0, C
+Cancelation = 104, 104, 1538, 635, C
+Issue = 0, 0, 0, 0, C
+Stamp = 0, 0, 0, 0, C
+Validate = 0, 0, 0, 0, C
+Base64Coder = 0, 0, 0, 0, C
+basUtf8FromString = 286, 286, 1552, 910, C
