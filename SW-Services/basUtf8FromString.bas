@@ -1,5 +1,4 @@
 Attribute VB_Name = "basUtf8FromString"
-Attribute VB_Name = "basUtf8FromString"
 ' basUtf8FromString
 
 ' Written by David Ireland DI Management Services Pty Limited 2015

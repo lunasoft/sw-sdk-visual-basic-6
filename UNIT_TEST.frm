@@ -22,43 +22,32 @@ Begin VB.Form UNIT_TEST
       _ExtentY        =   15901
       _Version        =   393216
       Tabs            =   5
+      Tab             =   2
       TabsPerRow      =   5
       TabHeight       =   520
       TabCaption(0)   =   "Autenticación"
       TabPicture(0)   =   "UNIT_TEST.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Label1"
-      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "Label3"
-      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "Auth"
-      Tab(0).Control(2).Enabled=   0   'False
       Tab(0).Control(3)=   "body"
-      Tab(0).Control(3).Enabled=   0   'False
       Tab(0).Control(4)=   "Respuesta"
-      Tab(0).Control(4).Enabled=   0   'False
       Tab(0).ControlCount=   5
       TabCaption(1)   =   "Timbrado"
       TabPicture(1)   =   "UNIT_TEST.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label4"
-      Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "CommonDialog1"
-      Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "cmbStamp"
-      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(0)=   "Command4"
+      Tab(1).Control(1)=   "StampResponse"
+      Tab(1).Control(2)=   "XMLATimbrar"
       Tab(1).Control(3)=   "Command1"
-      Tab(1).Control(3).Enabled=   0   'False
-      Tab(1).Control(4)=   "XMLATimbrar"
-      Tab(1).Control(4).Enabled=   0   'False
-      Tab(1).Control(5)=   "StampResponse"
-      Tab(1).Control(5).Enabled=   0   'False
-      Tab(1).Control(6)=   "Command4"
-      Tab(1).Control(6).Enabled=   0   'False
+      Tab(1).Control(4)=   "cmbStamp"
+      Tab(1).Control(5)=   "CommonDialog1"
+      Tab(1).Control(6)=   "Label4"
       Tab(1).ControlCount=   7
       TabCaption(2)   =   "Cancelación"
       TabPicture(2)   =   "UNIT_TEST.frx":0038
-      Tab(2).ControlEnabled=   0   'False
+      Tab(2).ControlEnabled=   -1  'True
       Tab(2).Control(0)=   "Label13"
       Tab(2).Control(0).Enabled=   0   'False
       Tab(2).Control(1)=   "Label12"
@@ -109,38 +98,30 @@ Begin VB.Form UNIT_TEST
       TabCaption(3)   =   "Estado de Cuenta"
       TabPicture(3)   =   "UNIT_TEST.frx":0054
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "AccountBalanceParse"
-      Tab(3).Control(0).Enabled=   0   'False
+      Tab(3).Control(0)=   "Command2"
       Tab(3).Control(1)=   "AccountBalanceResponse"
-      Tab(3).Control(1).Enabled=   0   'False
-      Tab(3).Control(2)=   "Command2"
-      Tab(3).Control(2).Enabled=   0   'False
+      Tab(3).Control(2)=   "AccountBalanceParse"
       Tab(3).ControlCount=   3
       TabCaption(4)   =   "Válidar"
       TabPicture(4)   =   "UNIT_TEST.frx":0070
       Tab(4).ControlEnabled=   0   'False
-      Tab(4).Control(0)=   "Label5"
-      Tab(4).Control(0).Enabled=   0   'False
-      Tab(4).Control(1)=   "XML"
-      Tab(4).Control(1).Enabled=   0   'False
+      Tab(4).Control(0)=   "Command3"
+      Tab(4).Control(1)=   "ValidateXML"
       Tab(4).Control(2)=   "ValidateResponse"
-      Tab(4).Control(2).Enabled=   0   'False
-      Tab(4).Control(3)=   "ValidateXML"
-      Tab(4).Control(3).Enabled=   0   'False
-      Tab(4).Control(4)=   "Command3"
-      Tab(4).Control(4).Enabled=   0   'False
+      Tab(4).Control(3)=   "XML"
+      Tab(4).Control(4)=   "Label5"
       Tab(4).ControlCount=   5
       Begin VB.CommandButton Command5 
          Caption         =   "Importar XML"
          Height          =   735
-         Left            =   -61440
+         Left            =   13560
          TabIndex        =   46
          Top             =   5400
          Width           =   1215
       End
       Begin RichTextLib.RichTextBox txtXML 
          Height          =   735
-         Left            =   -70920
+         Left            =   4080
          TabIndex        =   45
          Top             =   5400
          Width           =   9375
@@ -184,7 +165,7 @@ Begin VB.Form UNIT_TEST
       End
       Begin VB.TextBox Respuesta 
          Height          =   1335
-         Left            =   3840
+         Left            =   -71160
          MultiLine       =   -1  'True
          TabIndex        =   27
          Top             =   2880
@@ -192,7 +173,7 @@ Begin VB.Form UNIT_TEST
       End
       Begin VB.TextBox body 
          Height          =   1335
-         Left            =   3720
+         Left            =   -71280
          MultiLine       =   -1  'True
          TabIndex        =   26
          Top             =   840
@@ -201,7 +182,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.CommandButton Auth 
          Caption         =   "Autorización"
          Height          =   735
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   25
          Top             =   840
          Width           =   2775
@@ -217,7 +198,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.CommandButton btnCancelar 
          Caption         =   "Cancelar"
          Height          =   975
-         Left            =   -74640
+         Left            =   360
          TabIndex        =   23
          Top             =   7800
          Width           =   3135
@@ -283,7 +264,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.TextBox txtCer 
          Enabled         =   0   'False
          Height          =   615
-         Left            =   -70920
+         Left            =   4080
          MultiLine       =   -1  'True
          TabIndex        =   15
          Top             =   840
@@ -291,7 +272,7 @@ Begin VB.Form UNIT_TEST
       End
       Begin VB.TextBox txtResultCancelacion 
          Height          =   2295
-         Left            =   -70920
+         Left            =   4080
          MultiLine       =   -1  'True
          TabIndex        =   14
          Top             =   6480
@@ -300,7 +281,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.TextBox txtKey 
          Enabled         =   0   'False
          Height          =   735
-         Left            =   -70920
+         Left            =   4080
          MultiLine       =   -1  'True
          TabIndex        =   13
          Top             =   1800
@@ -308,7 +289,7 @@ Begin VB.Form UNIT_TEST
       End
       Begin VB.TextBox txtPFX 
          Height          =   855
-         Left            =   -70920
+         Left            =   4080
          MultiLine       =   -1  'True
          TabIndex        =   12
          Top             =   3480
@@ -316,14 +297,14 @@ Begin VB.Form UNIT_TEST
       End
       Begin VB.TextBox txtPswrdKey 
          Height          =   375
-         Left            =   -63840
+         Left            =   11160
          TabIndex        =   11
          Top             =   2760
          Width           =   3495
       End
       Begin VB.TextBox txtUUID 
          Height          =   375
-         Left            =   -69600
+         Left            =   5400
          TabIndex        =   10
          Top             =   4560
          Width           =   9255
@@ -332,7 +313,7 @@ Begin VB.Form UNIT_TEST
          Caption         =   "Importar .Cer"
          Enabled         =   0   'False
          Height          =   495
-         Left            =   -61800
+         Left            =   13200
          TabIndex        =   9
          Top             =   840
          Width           =   1455
@@ -341,7 +322,7 @@ Begin VB.Form UNIT_TEST
          Caption         =   "Importar .Key"
          Enabled         =   0   'False
          Height          =   615
-         Left            =   -61680
+         Left            =   13320
          TabIndex        =   8
          Top             =   1800
          Width           =   1335
@@ -349,7 +330,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.CommandButton btnPFX 
          Caption         =   "Importar .Pfx"
          Height          =   975
-         Left            =   -61800
+         Left            =   13200
          TabIndex        =   7
          Top             =   3360
          Width           =   1335
@@ -357,7 +338,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Frame TipoCancelacion 
          Caption         =   "Tipo de Cancelación"
          Height          =   2535
-         Left            =   -74640
+         Left            =   360
          TabIndex        =   2
          Top             =   600
          Width           =   2895
@@ -397,7 +378,7 @@ Begin VB.Form UNIT_TEST
       End
       Begin VB.TextBox txtRFC 
          Height          =   375
-         Left            =   -70320
+         Left            =   4680
          TabIndex        =   1
          Top             =   2760
          Width           =   3255
@@ -411,7 +392,7 @@ Begin VB.Form UNIT_TEST
       End
       Begin VB.TextBox txtTipoCancelacion 
          Height          =   375
-         Left            =   -73560
+         Left            =   1440
          TabIndex        =   28
          Text            =   "PFX"
          Top             =   2640
@@ -420,7 +401,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label3 
          Caption         =   "Parseado"
          Height          =   255
-         Left            =   3960
+         Left            =   -71040
          TabIndex        =   41
          Top             =   2400
          Width           =   975
@@ -428,7 +409,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label1 
          Caption         =   "Respuesta"
          Height          =   255
-         Left            =   3720
+         Left            =   -71280
          TabIndex        =   40
          Top             =   480
          Width           =   1215
@@ -460,7 +441,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label6 
          Caption         =   "Certificado"
          Height          =   255
-         Left            =   -70920
+         Left            =   4080
          TabIndex        =   36
          Top             =   600
          Width           =   2655
@@ -468,7 +449,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label7 
          Caption         =   "Key"
          Height          =   255
-         Left            =   -70920
+         Left            =   4080
          TabIndex        =   35
          Top             =   1560
          Width           =   2175
@@ -476,7 +457,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label8 
          Caption         =   "Contraseña Key"
          Height          =   255
-         Left            =   -65160
+         Left            =   9840
          TabIndex        =   34
          Top             =   2880
          Width           =   1335
@@ -484,7 +465,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label9 
          Caption         =   "PFX"
          Height          =   255
-         Left            =   -70920
+         Left            =   4080
          TabIndex        =   33
          Top             =   3240
          Width           =   1935
@@ -492,7 +473,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label10 
          Caption         =   "UUID"
          Height          =   255
-         Left            =   -70800
+         Left            =   4200
          TabIndex        =   32
          Top             =   4680
          Width           =   615
@@ -500,7 +481,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label11 
          Caption         =   "Resultado"
          Height          =   255
-         Left            =   -70920
+         Left            =   4080
          TabIndex        =   31
          Top             =   6240
          Width           =   2655
@@ -508,7 +489,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label12 
          Caption         =   "XML"
          Height          =   255
-         Left            =   -70920
+         Left            =   4080
          TabIndex        =   30
          Top             =   5040
          Width           =   1455
@@ -516,7 +497,7 @@ Begin VB.Form UNIT_TEST
       Begin VB.Label Label13 
          Caption         =   "RFC"
          Height          =   255
-         Left            =   -70920
+         Left            =   4080
          TabIndex        =   29
          Top             =   2880
          Width           =   615
@@ -597,11 +578,11 @@ Result = Cancelation.CancelationByUUID(url, RFC, UUID, Token)
 
 ElseIf TipoCancelacion = "PFX" Then
 
-Result = Cancelation.CancelationByPFX(url, PFX, UUID, password, RFC, Token)
+Result = Cancelation.CancelationByPFX(url, PFX, password, RFC, UUID, Token)
 
 ElseIf TipoCancelacion = "CSD" Then
 
-Result = Cancelation.CancelationByCSD(url, Token, Cer, Key, password, UUID)
+Result = Cancelation.CancelationByCSD(url, Cer, Key, password, RFC, UUID, Token)
 
 ElseIf TipoCancelacion = "XML" Then
 
@@ -614,8 +595,7 @@ txtResultCancelacion.Text = Result
 End Sub
 
 Private Sub btnCer_Click()
-
-   Dim mybase64 As String
+    Dim mybase64 As String
     CommonDialog1.Filter = "Cer files (*.cer)|*.cer"
     CommonDialog1.ShowOpen
     If CommonDialog1.FileName <> "" Then
@@ -681,7 +661,7 @@ btnKey.Enabled = True
 txtPswrdKey.Enabled = True
 txtPswrdKey.Text = ""
 
-txtUUID.Enabled = False
+txtUUID.Enabled = True
 txtUUID.Text = ""
 
 txtXML.Enabled = False

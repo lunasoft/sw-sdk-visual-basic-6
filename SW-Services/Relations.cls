@@ -6,7 +6,7 @@ BEGIN
   DataSourceBehavior  = 0  'vbNone
   MTSTransactionMode  = 0  'NotAnMTSObject
 END
-Attribute VB_Name = "Cancelation"
+Attribute VB_Name = "Relations"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = False
@@ -14,13 +14,10 @@ Attribute VB_Exposed = False
     Dim sUrl As String
     Dim http As MSXML2.ServerXMLHTTP
     Dim body As String
-    Dim quote As String
-    Dim sp As String
     
-    Public Function CancelationByCSD(url As String, b64Cer As String, b64Key As String, PasswordKey As String, RFC As String, UUID As String, Token As String) As String
+    Public Function RelationsByCSD(url As String, Token As String, b64Cer As String, b64Key As String, PasswordKey As String, RFC As String, UUID As String) As String
         Set http = New MSXML2.ServerXMLHTTP
-        quote = """"
-        sUrl = url & "/cfdi33/cancel/csd"
+        sUrl = url & "/relations/csd"
 body = "{ " & Chr(34) & "uuid" & Chr(34) & ": " & Chr(34) & UUID & Chr(34) & "," _
             & Chr(34) & "password" & Chr(34) & ": " & Chr(34) & PasswordKey & Chr(34) & "," _
             & Chr(34) & "rfc" & Chr(34) & ": " & Chr(34) & RFC & Chr(34) & "," _
@@ -36,13 +33,13 @@ body = "{ " & Chr(34) & "uuid" & Chr(34) & ": " & Chr(34) & UUID & Chr(34) & ","
 
         End With
         
-        CancelationByCSD = http.responseText
+        RelationsByCSD = http.responseText
         
     End Function
 
-    Public Function CancelationByPFX(url As String, b64pfx As String, UUID As String, password As String, RFC As String, Token As String) As String
+    Public Function RelationsByPFX(url As String, Token As String, b64pfx As String, password As String, RFC As String, UUID As String) As String
         Set http = New MSXML2.ServerXMLHTTP
-        sUrl = url & "/cfdi33/cancel/pfx"
+        sUrl = url & "/relations/pfx"
         Dim quote As String
 
      body = "{ " & Chr(34) & "uuid" & Chr(34) & ": " & Chr(34) & UUID & Chr(34) & "," _
@@ -59,13 +56,13 @@ body = "{ " & Chr(34) & "uuid" & Chr(34) & ": " & Chr(34) & UUID & Chr(34) & ","
 
         End With
 
-        CancelationByPFX = http.responseText
+        RelationsByPFX = http.responseText
 
     End Function
 
-    Public Function CancelationByUUID(url As String, RFC As String, UUID As String, Token As String) As String
+    Public Function RelationsByUUID(url As String, Token As String, RFC As String, UUID As String) As String
         Set http = New MSXML2.ServerXMLHTTP
-        sUrl = url & "/cfdi33/cancel/" & RFC & "/" & UUID
+        sUrl = url & "/relations/" & RFC & "/" & UUID
         
         With http
             .open "POST", sUrl, False
@@ -75,17 +72,17 @@ body = "{ " & Chr(34) & "uuid" & Chr(34) & ": " & Chr(34) & UUID & Chr(34) & ","
 
         End With
         
-        CancelationByUUID = http.responseText
+        RelationsByUUID = http.responseText
         
     End Function
     
-    Public Function CancelationByXML(url As String, XML As String, Token As String) As String
+    Public Function RelationsByXML(url As String, Token As String, XML As String) As String
         Set http = New MSXML2.ServerXMLHTTP
-        sp = "\r\n"
+        Dim bound As String
         bound = "AaB03x"
         XML = Replace(XML, "﻿", "")
         XML = Replace(XML, "ï»¿", "")
-        sUrl = url & "/cfdi33/cancel/xml"
+        sUrl = url & "/relations/xml"
 
         body = ""
         body = body & "--" & bound & vbCrLf & "Content-Disposition: form-data; name=xml; filename=xml" & vbCrLf & "Content-Transfer-Encoding: binary" & vbCrLf & "Content-Type: text/xml" & vbCrLf & vbCrLf & XML & vbCrLf & "--" + bound & "--" & vbCrLf
@@ -99,7 +96,9 @@ body = "{ " & Chr(34) & "uuid" & Chr(34) & ": " & Chr(34) & UUID & Chr(34) & ","
 
         End With
 
-        CancelationByXML = http.responseText
+        RelationsByXML = http.responseText
 
     End Function
+
+
 
