@@ -1,9 +1,13 @@
-UNIT_TEST = 169, 162, 1065, 690, C, 2, 1, 1318, 772, C
+UNIT_TEST = 169, 162, 1065, 690, , 2, 1, 1318, 772, C
 AccountBalance = 36, 130, 1325, 754, 
 Authentication = 260, 260, 1415, 849, C
-Cancelation = 213, 85, 1326, 602, C
+Cancelation = 49, 83, 1374, 605, 
 Issue = 26, 26, 1181, 615, C
 Stamp = 32, 51, 792, 486, C
 Validate = 52, 52, 1207, 641, C
 Base64Coder = 0, 2, 1422, 583, C
 basUtf8FromString = 75, 112, 1341, 736, 
+AcceptReject = 0, 0, 0, 0, C
+Pendings = 0, 0, 0, 0, C
+Relations = 0, 0, 0, 0, C
+StatusSAT = 0, 0, 0, 0, C

@@ -40,7 +40,7 @@ body = "{ " & Chr(34) & "uuid" & Chr(34) & ": " & Chr(34) & UUID & Chr(34) & ","
         
     End Function
 
-    Public Function CancelationByPFX(url As String, b64pfx As String, UUID As String, password As String, RFC As String, Token As String) As String
+    Public Function CancelationByPFX(url As String, b64pfx As String, password As String, RFC As String, UUID As String, Token As String) As String
         Set http = New MSXML2.ServerXMLHTTP
         sUrl = url & "/cfdi33/cancel/pfx"
         Dim quote As String
